@@ -15,7 +15,7 @@ source=("git+https://github.com/AgregoreWeb/agregore-browser/"
         "agregore-browser.sh"
         "agregore-browser.install")
 sha1sums=('SKIP'
-          '0b98e3f505a0c6d4eafa3d8a8f2b1cf65d66d501'
+          '94f52aba0d484b95180774fd5a23a19cca9d5dde'
           '4b4467fef75406e8e669422b85e68c8f15b3beaf'
           'fcfae500c95434715da05756cab5ab83d70a8848')
 
