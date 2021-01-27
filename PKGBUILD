@@ -7,34 +7,39 @@ pkgdesc="A minimal browser for the distributed web"
 arch=('x86_64')
 url="https://github.com/AgregoreWeb/agregore-browser"
 license=(AGPL)
+install=agregore-browser.install
 makedepends=('git' 'npm')
-depends=('python3' 'nodejs' 'gtk3' 'libsodium' 'nss' 'lib32-gcc-libs')
+depends=('electron' 'python3' 'nodejs')
 source=("git+https://github.com/AgregoreWeb/agregore-browser/"
         "agregore-browser.desktop"
-        "agregore-browser.sh")
+        "agregore-browser.sh"
+        "agregore-browser.install")
 sha1sums=('SKIP'
           '0b98e3f505a0c6d4eafa3d8a8f2b1cf65d66d501'
-          'ee8474defb6d3dd06b734589e45ca5bdddc047e2')
+          '4b4467fef75406e8e669422b85e68c8f15b3beaf'
+          'fcfae500c95434715da05756cab5ab83d70a8848')
 
 
+# should we remove this?
 build() {
   cd "${srcdir}/${_pkgname}"
-  npm install 
-  npm run builder
+  # npm install
 }
 
 
 pkgver() {
-  cd "$pkgname"
-  # cutting off 'foo-' prefix that presents in the git tag
-  git describe --long | sed 's/^foo-//;s/\([^-]*-g\)/r\1/;s/-/./g'
+  cd "$_pkgname"
+  # cutting off 'v' prefix that presents in the git tag
+  git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 
 package() {
   ### builded
   install -d          "${pkgdir}/usr/lib/agregore-browser"
-  cp -r               "${srcdir}/${_pkgname}/"release/linux-unpacked/*  "${pkgdir}/usr/lib/agregore-browser/"
+  cp -r               "${srcdir}/${_pkgname}/"app              "${pkgdir}/usr/lib/agregore-browser/"
+  cp -r               "${srcdir}/${_pkgname}/"package.json     "${pkgdir}/usr/lib/agregore-browser/"
+  cp -r               "${srcdir}/${_pkgname}/"build            "${pkgdir}/usr/lib/agregore-browser/"
 
   ### tools
   install -Dm644      "${srcdir}/agregore-browser.desktop"              "${pkgdir}/usr/share/applications/agregore-browser.desktop"

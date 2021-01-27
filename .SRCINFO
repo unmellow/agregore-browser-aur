@@ -3,22 +3,22 @@ pkgbase = agregore-browser-git
 	pkgver = 1.0.0.30.r3.gdc755dc
 	pkgrel = 1
 	url = https://github.com/AgregoreWeb/agregore-browser
+	install = agregore-browser.install
 	arch = x86_64
 	license = AGPL
 	makedepends = git
 	makedepends = npm
+	depends = electron
 	depends = python3
 	depends = nodejs
-	depends = gtk3
-	depends = libsodium
-	depends = nss
-	depends = lib32-gcc-libs
 	source = git+https://github.com/AgregoreWeb/agregore-browser/
 	source = agregore-browser.desktop
 	source = agregore-browser.sh
+	source = agregore-browser.install
 	sha1sums = SKIP
 	sha1sums = 0b98e3f505a0c6d4eafa3d8a8f2b1cf65d66d501
-	sha1sums = ee8474defb6d3dd06b734589e45ca5bdddc047e2
+	sha1sums = 4b4467fef75406e8e669422b85e68c8f15b3beaf
+	sha1sums = fcfae500c95434715da05756cab5ab83d70a8848
 
 pkgname = agregore-browser-git
 

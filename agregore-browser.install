@@ -1,0 +1,11 @@
+post_install() {
+        cd /usr/lib/agregore-browser/
+	sudo npm install
+}
+
+
+post_upgrade() {
+	cd /usr/lib/agregore-browser/
+	sudo npm install
+}
+
