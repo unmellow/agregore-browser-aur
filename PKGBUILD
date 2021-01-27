@@ -16,6 +16,7 @@ sha1sums=('SKIP'
           '0b98e3f505a0c6d4eafa3d8a8f2b1cf65d66d501'
           'ee8474defb6d3dd06b734589e45ca5bdddc047e2')
 
+
 build() {
   cd "${srcdir}/${_pkgname}"
   npm install 
@@ -24,9 +25,11 @@ build() {
 
 
 pkgver() {
-  cd ${srcdir}/${_pkgname}
-  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g' | sed 's/^v//'
+  cd "$pkgname"
+  # cutting off 'foo-' prefix that presents in the git tag
+  git describe --long | sed 's/^foo-//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
+
 
 package() {
   ### builded
