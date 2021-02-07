@@ -1,4 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-# Launch application
-/usr/lib/agregore-browser/agregore-browser || cd /usr/lib/agregore-browser/ && electron . 
+exec electron /usr/lib/agregore-browser/resources/app "$@"

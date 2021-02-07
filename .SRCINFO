@@ -1,9 +1,8 @@
 pkgbase = agregore-browser-git
 	pkgdesc = A minimal browser for the distributed web
-	pkgver = 1.0.0.30.r3.gdc755dc
+	pkgver = 1.0.0.30.r6.gc78b34b
 	pkgrel = 1
 	url = https://github.com/AgregoreWeb/agregore-browser
-	install = agregore-browser.install
 	arch = x86_64
 	license = AGPL
 	makedepends = git
@@ -14,11 +13,9 @@ pkgbase = agregore-browser-git
 	source = git+https://github.com/AgregoreWeb/agregore-browser/
 	source = agregore-browser.desktop
 	source = agregore-browser.sh
-	source = agregore-browser.install
 	sha1sums = SKIP
 	sha1sums = 94f52aba0d484b95180774fd5a23a19cca9d5dde
-	sha1sums = 4b4467fef75406e8e669422b85e68c8f15b3beaf
-	sha1sums = fcfae500c95434715da05756cab5ab83d70a8848
+	sha1sums = 2c5372fcb7c72cf0f6ec4bf8b4305eb8b805c7af
 
 pkgname = agregore-browser-git
 
