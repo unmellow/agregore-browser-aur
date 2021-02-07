@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec electron /usr/lib/agregore-browser/resources/app "$@"
+cd /usr/lib/agregore-browser/resources/app
+exec electron . "$@"

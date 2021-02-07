@@ -10,12 +10,13 @@ pkgbase = agregore-browser-git
 	depends = electron
 	depends = python3
 	depends = nodejs
+	depends = libsodium
 	source = git+https://github.com/AgregoreWeb/agregore-browser/
 	source = agregore-browser.desktop
 	source = agregore-browser.sh
 	sha1sums = SKIP
 	sha1sums = 94f52aba0d484b95180774fd5a23a19cca9d5dde
-	sha1sums = 2c5372fcb7c72cf0f6ec4bf8b4305eb8b805c7af
+	sha1sums = b2d858eb3b8d716fff8ef3e40bef3219cb26140b
 
 pkgname = agregore-browser-git
 

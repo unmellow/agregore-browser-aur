@@ -8,13 +8,13 @@ arch=('x86_64')
 url="https://github.com/AgregoreWeb/agregore-browser"
 license=(AGPL)
 makedepends=('git' 'npm')
-depends=('electron' 'python3' 'nodejs')
+depends=('electron' 'python3' 'nodejs' 'libsodium')
 source=("git+https://github.com/AgregoreWeb/agregore-browser/"
         "agregore-browser.desktop"
         "agregore-browser.sh")
 sha1sums=('SKIP'
           '94f52aba0d484b95180774fd5a23a19cca9d5dde'
-          '2c5372fcb7c72cf0f6ec4bf8b4305eb8b805c7af')
+          'b2d858eb3b8d716fff8ef3e40bef3219cb26140b')
 
 build() {
   cd "${srcdir}/${_pkgname}"
@@ -64,10 +64,10 @@ package() {
   install -d          "${pkgdir}/usr/lib/agregore-browser"
   cp -r               "${srcdir}/${_pkgname}/"release/linux-unpacked/*  "${pkgdir}/usr/lib/agregore-browser/"
 
-  # find "${pkgdir}/usr/lib/agregore-browser/" -iname "prebuilds"        -exec rm -rf {} \; || true
-  find "${pkgdir}/usr/lib/agregore-browser/" -iname "*-arm*"           -exec rm -rf {} \; || true & 
-  find "${pkgdir}/usr/lib/agregore-browser/" -iname "electron-builder" -exec rm -rf {} \; || true &
-  find "${pkgdir}/usr/lib/agregore-browser/" -iname "electron"         -exec rm -rf {} \; || true & 
+  # find "${pkgdir}/usr/lib/agregore-browser/" -iname "macos"            -exec rm -rf {} \; || true
+  find "${pkgdir}/usr/lib/agregore-browser/" -iname "*-arm*"           -exec rm -rf {} \; || true 
+  find "${pkgdir}/usr/lib/agregore-browser/" -iname "electron-builder" -exec rm -rf {} \; || true 
+  find "${pkgdir}/usr/lib/agregore-browser/" -iname "electron"         -exec rm -rf {} \; || true  
   find "${pkgdir}/usr/lib/agregore-browser/" -iname "android-*"        -exec rm -rf {} \; || true  
 
 
