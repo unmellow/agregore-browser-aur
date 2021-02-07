@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Agregore Browser (1.0.0-29)
+Name=Agregore Browser
 Exec=/usr/bin/agregore-browser
 terminal=false
 Type=Application

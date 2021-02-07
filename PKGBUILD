@@ -13,7 +13,7 @@ source=("git+https://github.com/AgregoreWeb/agregore-browser/"
         "agregore-browser.desktop"
         "agregore-browser.sh")
 sha1sums=('SKIP'
-          '94f52aba0d484b95180774fd5a23a19cca9d5dde'
+          '5df84e15aba60d304d0fa102d78b797a737718f3' 
           'b2d858eb3b8d716fff8ef3e40bef3219cb26140b')
 pkgver() {
   cd "$_pkgname"
