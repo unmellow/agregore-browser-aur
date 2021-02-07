@@ -15,32 +15,6 @@ source=("git+https://github.com/AgregoreWeb/agregore-browser/"
 sha1sums=('SKIP'
           '94f52aba0d484b95180774fd5a23a19cca9d5dde'
           'b2d858eb3b8d716fff8ef3e40bef3219cb26140b')
-
-build() {
-  cd "${srcdir}/${_pkgname}"
-  # use system electron version
-  # see: https://wiki.archlinux.org/index.php/Electron_package_guidelines
-  electronDist=$(dirname $(realpath $(which electron)))
-  electronVer=$(electron --version | tail -c +2)
-  sed -i '/		"electron": /d' ./package.json
-  HOME="$srcdir/.electron-gyp" npm install --cache "${srcdir}/npm-cache"
-  ./node_modules/.bin/electron-builder --linux --x64 -c.electronDist=$electronDist -c.electronVersion=$electronVer --dir
-}
-
-
-package() {
-  ### builded
-  install -d          "${pkgdir}/usr/lib/agregore-browser"
-  cp -r               "${srcdir}/${_pkgname}/"release/linux-unpacked/*  "${pkgdir}/usr/lib/agregore-browser/"
-
-  ### tools
-  install -Dm644      "${srcdir}/agregore-browser.desktop"              "${pkgdir}/usr/share/applications/agregore-browser.desktop"
-  install -Dm755      "${srcdir}/agregore-browser.sh"                   "${pkgdir}/usr/bin/agregore-browser"
-
-  ### LICENSE
-  install -Dm644      "${_pkgname}/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE" 
-
-} 
 pkgver() {
   cd "$_pkgname"
   # cutting off 'v' prefix that presents in the git tag
@@ -56,7 +30,7 @@ build() {
   sed -i '/		"electron": /d' ./package.json
   HOME="$srcdir/.electron-gyp" npm install --cache "${srcdir}/npm-cache"
   ./node_modules/.bin/electron-builder --linux --x64 -c.electronDist=$electronDist -c.electronVersion=$electronVer --dir
-}
+} 
 
 
 package() {
@@ -79,6 +53,4 @@ package() {
   install -Dm644      "${_pkgname}/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE" 
 
 }
-
- 
 # vim:set ts=2 sw=2 et:
