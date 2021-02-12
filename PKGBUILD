@@ -34,11 +34,12 @@ build() {
 
 
 package() {
-  ### built
+  ### package
   install -d          "${pkgdir}/usr/lib/agregore-browser"
   cp -r               "${srcdir}/${_pkgname}/"release/linux-unpacked/*  "${pkgdir}/usr/lib/agregore-browser/"
+ 
 
-  # find "${pkgdir}/usr/lib/agregore-browser/" -iname "macos"            -exec rm -rf {} \; || true
+  ### clean
   find "${pkgdir}/usr/lib/agregore-browser/" -iname "*-arm*"           -exec rm -rf {} \; || true 
   find "${pkgdir}/usr/lib/agregore-browser/" -iname "electron-builder" -exec rm -rf {} \; || true 
   find "${pkgdir}/usr/lib/agregore-browser/" -iname "electron"         -exec rm -rf {} \; || true  
