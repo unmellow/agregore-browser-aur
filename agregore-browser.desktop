@@ -6,7 +6,6 @@ Type=Application
 Icon=/usr/lib/applications/agregore-browser/build/icon.svg
 StartupWMClass=Agregore Browser
 Comment=A minimal web browser for the distributed web
-MimeType=x-scheme-handler/hyper;x-scheme-handler/dat;x-scheme-handler/http;x-scheme-handler/https;
+MimeType=x-scheme-handler/hyper;x-scheme-handler/dat;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ipfs;x-scheme-handler/ipns;
 Categories=Development;
-
 TryExec=/usr/bin/agregore-browser

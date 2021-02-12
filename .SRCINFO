@@ -15,8 +15,8 @@ pkgbase = agregore-browser-git
 	source = agregore-browser.desktop
 	source = agregore-browser.sh
 	sha1sums = SKIP
-	sha1sums = 5df84e15aba60d304d0fa102d78b797a737718f3
-	sha1sums = b2d858eb3b8d716fff8ef3e40bef3219cb26140b
+	sha1sums = cea98409660983e609bf214e444a2cff24a3c84f
+	sha1sums = 611b88a4f3e8015d7a0d6247c178c2be1a6b282a
 
 pkgname = agregore-browser-git
 
