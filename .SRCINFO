@@ -1,22 +1,25 @@
 pkgbase = agregore-browser-git
 	pkgdesc = A minimal browser for the distributed web
 	pkgver = 1.0.0.30.r6.gc78b34b
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/AgregoreWeb/agregore-browser
 	arch = x86_64
-	license = AGPL
+	license = AGPL-3.0-or-later
+	options = !strip
+	options = !debug
 	makedepends = git
 	makedepends = npm
+	makedepends = python
 	depends = electron
-	depends = python3
-	depends = nodejs
 	depends = libsodium
-	source = git+https://github.com/AgregoreWeb/agregore-browser/
+	provides = agregore-browser=1.0.0.30.r6.gc78b34b
+	conflicts = agregore-browser
+	conflicts = agregore-browser-bin
+	source = agregore-browser::git+https://github.com/AgregoreWeb/agregore-browser.git
 	source = agregore-browser.desktop
 	source = agregore-browser.sh
-	sha1sums = SKIP
-	sha1sums = cea98409660983e609bf214e444a2cff24a3c84f
-	sha1sums = 611b88a4f3e8015d7a0d6247c178c2be1a6b282a
+	sha256sums = SKIP
+	sha256sums = 499ec44c3b143267ae13d77b88a3daaccc64e1a5d526d017f8113b7bb6672cc3
+	sha256sums = c7384b6cc580b909aa6db700996a7fdbea2a5e8f2fc3498881dafdcfd75d9aec
 
 pkgname = agregore-browser-git
-
